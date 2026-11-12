@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamagotchi 🥚</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="card">
+
+        <div id="death-screen">
+            <div class="death-emoji">💀</div>
+            <div class="death-title">GAME<br>OVER</div>
+            <div class="death-subtitle" id="death-reason">Ton ami est parti...</div>
+            <button class="btn-reborn" onclick="reborn()">🥚 Recommencer</button>
+        </div>
+
+        <div class="game-title">✨ TAMAGOTCHI ✨</div>
+        <div class="game-clock" id="game-clock">🕐 08:00 </div>
+
+        <div class="pet-scene" id="pet-scene">
+            <video class="pet-scene-vid" src="videos/finito.mp4" muted autoplay loop playsinline></video>
+            <div id="pet-emoji" class="idle">🐣</div>
+        </div>
+
+        <div id="mood-msg">Bonjour ! Je suis là ! 👋</div>
+
+        <div class="gauges">
+            <div class="gauge-row">
+                <span class="gauge-icon">🍎</span>
+                <span class="gauge-label">Faim</span>
+                <div class="gauge-track">
+                    <div class="gauge-fill hunger" id="gauge-faim" style="width:80%"></div>
+                </div>
+                <span class="gauge-val" id="val-faim">80</span>
+            </div>
+            <div class="gauge-row">
+                <span class="gauge-icon">😊</span>
+                <span class="gauge-label">Bonheur</span>
+                <div class="gauge-track">
+                    <div class="gauge-fill happy" id="gauge-bonheur" style="width:80%"></div>
+                </div>
+                <span class="gauge-val" id="val-bonheur">80</span>
+            </div>
+            <div class="gauge-row">
+                <span class="gauge-icon">⚡</span>
+                <span class="gauge-label">Énergie</span>
+                <div class="gauge-track">
+                    <div class="gauge-fill energy" id="gauge-energie" style="width:80%"></div>
+                </div>
+                <span class="gauge-val" id="val-energie">80</span>
+            </div>
+            <div class="gauge-row">
+                <span class="gauge-icon">🛀</span>
+                <span class="gauge-label">Lavage</span>
+                <div class="gauge-track">
+                    <div class="gauge-fill-lavage" id="gauge-lavage" style="width:80%"></div>
+                </div>
+                <span class="gauge-val" id="val-lavage">80</span>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn btn-feed" id="btn-feed" onclick="nourrir()">
+                <span class="btn-icon">🍎</span>
+                <span class="btn-label">NOURRIR</span>
+            </button>
+            <button class="action-btn btn-play" id="btn-play" onclick="play()">
+                <span class="btn-icon">🎾</span>
+                <span class="btn-label">JOUER</span>
+            </button>
+            <button class="action-btn btn-sleep" id="btn-sleep" onclick="dodo()">
+                <span class="btn-icon">💤</span>
+                <span class="btn-label">DORMIR</span>
+            </button>
+            <button class="action-btn btn-dothis" id="btn-dothis" onclick="dothis()">
+                <span class="btn-icon">🛀</span>
+                <span class="btn-label">LAVER</span>
+            </button>
+        </div>
+
+        <button class="btn-reset" onclick="if(confirm('Réinitialiser ?')) reborn()">↺ Réinitialiser</button>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
